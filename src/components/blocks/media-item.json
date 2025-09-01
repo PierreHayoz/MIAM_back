@@ -1,0 +1,30 @@
+{
+  "collectionName": "components_blocks_media_items",
+  "info": {
+    "displayName": "media-item"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "image",
+        "video"
+      ]
+    },
+    "media": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "caption": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

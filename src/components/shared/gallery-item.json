@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_shared_gallery_items",
+  "info": {
+    "displayName": "gallery-item"
+  },
+  "options": {},
+  "attributes": {
+    "type": {
+      "type": "enumeration",
+      "required": true,
+      "default": "image",
+      "enum": [
+        "image",
+        "video",
+        "external"
+      ]
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    },
+    "alt": {
+      "type": "string"
+    },
+    "caption": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

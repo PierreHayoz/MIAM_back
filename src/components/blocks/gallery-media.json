@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_gallery_medias",
+  "info": {
+    "displayName": "gallery-media"
+  },
+  "options": {},
+  "attributes": {
+    "gallery": {
+      "type": "component",
+      "component": "blocks.media-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -1,0 +1,61 @@
+{
+  "collectionName": "components_blocks_paragraphs",
+  "info": {
+    "displayName": "paragraph",
+    "icon": "dashboard"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "text": {
+      "type": "text"
+    },
+    "type": {
+      "type": "enumeration",
+      "default": "text",
+      "enum": [
+        "text",
+        "list"
+      ]
+    },
+    "variant": {
+      "type": "enumeration",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type"
+            },
+            "list"
+          ]
+        }
+      },
+      "enum": [
+        "text",
+        "avatar",
+        "image"
+      ]
+    },
+    "items": {
+      "type": "component",
+      "conditions": {
+        "visible": {
+          "==": [
+            {
+              "var": "type"
+            },
+            "list"
+          ]
+        }
+      },
+      "component": "blocks.list-item",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

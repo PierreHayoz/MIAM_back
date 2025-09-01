@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_blocks_mid_paragraphs",
+  "info": {
+    "displayName": "mid-paragraph"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "text"
+    }
+  },
+  "config": {}
+}

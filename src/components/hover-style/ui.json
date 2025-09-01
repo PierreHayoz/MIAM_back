@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_hover_style_uis",
+  "info": {
+    "displayName": "ui"
+  },
+  "options": {},
+  "attributes": {
+    "hoverColor": {
+      "type": "string"
+    },
+    "hoverTextColor": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

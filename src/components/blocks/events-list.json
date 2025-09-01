@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_blocks_events_lists",
+  "info": {
+    "displayName": "events-list"
+  },
+  "options": {},
+  "attributes": {
+    "heading": {
+      "type": "string"
+    },
+    "intro": {
+      "type": "blocks"
+    },
+    "defaultRange": {
+      "type": "enumeration",
+      "default": "all",
+      "enum": [
+        "all",
+        "week",
+        "month",
+        "year"
+      ]
+    },
+    "showfilter": {
+      "type": "boolean"
+    },
+    "onlyUpcoming": {
+      "type": "boolean"
+    },
+    "pageSize": {
+      "type": "integer"
+    },
+    "event_categories": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::event-category.event-category"
+    },
+    "sort": {
+      "type": "enumeration",
+      "enum": [
+        "date_asc",
+        "date_desc"
+      ]
+    }
+  },
+  "config": {}
+}
