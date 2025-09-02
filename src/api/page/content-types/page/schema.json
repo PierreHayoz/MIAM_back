@@ -28,16 +28,16 @@
       "type": "uid",
       "required": false
     },
-    "paragraphes": {
-      "type": "richtext",
+    "pageHeading": {
+      "type": "string",
       "pluginOptions": {
         "i18n": {
           "localized": true
         }
       }
     },
-    "pageHeading": {
-      "type": "string",
+    "pageIntro": {
+      "type": "blocks",
       "pluginOptions": {
         "i18n": {
           "localized": true
@@ -57,16 +57,9 @@
         "blocks.media-item",
         "blocks.gallery-media",
         "blocks.banner",
-        "blocks.events-list"
+        "blocks.events-list",
+        "shared.partners-list"
       ]
-    },
-    "pageIntro": {
-      "type": "text",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
     }
   }
 }

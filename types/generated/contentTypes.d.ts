@@ -583,6 +583,7 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
     > &
       Schema.Attribute.Private;
     publishedAt: Schema.Attribute.DateTime;
+    socials: Schema.Attribute.Component<'shared.social-link', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -613,6 +614,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.gallery-media',
         'blocks.banner',
         'blocks.events-list',
+        'shared.partners-list',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -631,7 +633,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
-    pageIntro: Schema.Attribute.Text &
+    pageIntro: Schema.Attribute.Blocks &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -639,12 +641,6 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
       }>;
     pageTitle: Schema.Attribute.String &
       Schema.Attribute.Required &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    paragraphes: Schema.Attribute.RichText &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;

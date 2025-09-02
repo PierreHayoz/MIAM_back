@@ -95,6 +95,14 @@ export interface BlocksParagraph extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksPartnersList extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_partners_lists';
+  info: {
+    displayName: 'partners-list';
+  };
+  attributes: {};
+}
+
 export interface HoverStyleUi extends Struct.ComponentSchema {
   collectionName: 'components_hover_style_uis';
   info: {
@@ -149,6 +157,27 @@ export interface SharedGalleryItem extends Struct.ComponentSchema {
   };
 }
 
+export interface SharedPartners extends Struct.ComponentSchema {
+  collectionName: 'components_shared_partners';
+  info: {
+    displayName: 'partners';
+  };
+  attributes: {
+    logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
+    name: Schema.Attribute.String;
+  };
+}
+
+export interface SharedPartnersList extends Struct.ComponentSchema {
+  collectionName: 'components_shared_partners_lists';
+  info: {
+    displayName: 'partners-list';
+  };
+  attributes: {
+    partners: Schema.Attribute.Component<'shared.partners', true>;
+  };
+}
+
 export interface SharedSocialLink extends Struct.ComponentSchema {
   collectionName: 'components_shared_social_links';
   info: {
@@ -170,10 +199,13 @@ declare module '@strapi/strapi' {
       'blocks.media-item': BlocksMediaItem;
       'blocks.mid-paragraph': BlocksMidParagraph;
       'blocks.paragraph': BlocksParagraph;
+      'blocks.partners-list': BlocksPartnersList;
       'hover-style.ui': HoverStyleUi;
       'shared.button': SharedButton;
       'shared.contact': SharedContact;
       'shared.gallery-item': SharedGalleryItem;
+      'shared.partners': SharedPartners;
+      'shared.partners-list': SharedPartnersList;
       'shared.social-link': SharedSocialLink;
     }
   }

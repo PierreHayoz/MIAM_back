@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_shared_partners_lists",
+  "info": {
+    "displayName": "partners-list"
+  },
+  "options": {},
+  "attributes": {
+    "partners": {
+      "type": "component",
+      "component": "shared.partners",
+      "repeatable": true
+    }
+  },
+  "config": {}
+}

@@ -15,6 +15,11 @@
       "type": "component",
       "component": "shared.contact",
       "repeatable": false
+    },
+    "socials": {
+      "type": "component",
+      "component": "shared.social-link",
+      "repeatable": true
     }
   }
 }
