@@ -615,6 +615,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.banner',
         'blocks.events-list',
         'shared.partners-list',
+        'blocks.paragraphes',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{

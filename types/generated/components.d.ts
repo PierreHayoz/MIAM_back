@@ -95,6 +95,16 @@ export interface BlocksParagraph extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksParagraphes extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_paragraphes';
+  info: {
+    displayName: 'paragraphes';
+  };
+  attributes: {
+    paragraphe: Schema.Attribute.Blocks;
+  };
+}
+
 export interface BlocksPartnersList extends Struct.ComponentSchema {
   collectionName: 'components_blocks_partners_lists';
   info: {
@@ -199,6 +209,7 @@ declare module '@strapi/strapi' {
       'blocks.media-item': BlocksMediaItem;
       'blocks.mid-paragraph': BlocksMidParagraph;
       'blocks.paragraph': BlocksParagraph;
+      'blocks.paragraphes': BlocksParagraphes;
       'blocks.partners-list': BlocksPartnersList;
       'hover-style.ui': HoverStyleUi;
       'shared.button': SharedButton;

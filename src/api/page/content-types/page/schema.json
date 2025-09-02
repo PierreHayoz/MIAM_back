@@ -58,7 +58,8 @@
         "blocks.gallery-media",
         "blocks.banner",
         "blocks.events-list",
-        "shared.partners-list"
+        "shared.partners-list",
+        "blocks.paragraphes"
       ]
     }
   }
