@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_shared_date_occurences",
+  "info": {
+    "displayName": "date-occurence"
+  },
+  "options": {},
+  "attributes": {
+    "date": {
+      "type": "date"
+    },
+    "startTime": {
+      "type": "time"
+    },
+    "endTime": {
+      "type": "time"
+    }
+  },
+  "config": {}
+}

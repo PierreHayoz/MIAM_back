@@ -1,0 +1,47 @@
+{
+  "collectionName": "components_blocks_hover_lists",
+  "info": {
+    "displayName": "HoverList"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "variant": {
+      "type": "enumeration",
+      "enum": [
+        "text",
+        "image",
+        "text_image"
+      ]
+    },
+    "label": {
+      "type": "string"
+    },
+    "description": {
+      "type": "blocks"
+    },
+    "image": {
+      "type": "media",
+      "conditions": {
+        "visible": {
+          "!=": [
+            {
+              "var": "type"
+            },
+            "text"
+          ]
+        }
+      },
+      "multiple": false,
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos",
+        "audios"
+      ]
+    }
+  },
+  "config": {}
+}

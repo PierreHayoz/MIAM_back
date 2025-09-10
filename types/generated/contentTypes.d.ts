@@ -523,7 +523,19 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'>;
+    occurences: Schema.Attribute.Component<'shared.date-occurence', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     price: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    prices: Schema.Attribute.Component<'shared.price_tier', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -571,19 +583,176 @@ export interface ApiGlobalGlobal extends Struct.SingleTypeSchema {
   options: {
     draftAndPublish: true;
   };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
   attributes: {
-    contact: Schema.Attribute.Component<'shared.contact', false>;
+    blocks: Schema.Attribute.DynamicZone<['shared.events-suggestions']> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    contact: Schema.Attribute.Component<'shared.contact', false> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
-    locale: Schema.Attribute.String & Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::global.global'>;
+    publishedAt: Schema.Attribute.DateTime;
+    socials: Schema.Attribute.Component<'shared.social-link', true> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiGlossaireGlossaire extends Struct.CollectionTypeSchema {
+  collectionName: 'glossaires';
+  info: {
+    displayName: 'Glossaire';
+    pluralName: 'glossaires';
+    singularName: 'glossaire';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    definition: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    image: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::global.global'
-    > &
-      Schema.Attribute.Private;
+      'api::glossaire.glossaire'
+    >;
+    nom: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     publishedAt: Schema.Attribute.DateTime;
-    socials: Schema.Attribute.Component<'shared.social-link', true>;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
+  collectionName: 'homepages';
+  info: {
+    displayName: 'Homepage';
+    pluralName: 'homepages';
+    singularName: 'homepage';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    blocks: Schema.Attribute.DynamicZone<
+      ['blocks.partners-list', 'shared.section-cta', 'blocks.mid-paragraph']
+    > &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::homepage.homepage'
+    >;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
+export interface ApiMembreMembre extends Struct.CollectionTypeSchema {
+  collectionName: 'membres';
+  info: {
+    displayName: 'Membre';
+    pluralName: 'membres';
+    singularName: 'membre';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<'oneToMany', 'api::membre.membre'>;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    position: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    presentation: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
@@ -608,14 +777,15 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   attributes: {
     blocks: Schema.Attribute.DynamicZone<
       [
-        'blocks.paragraph',
         'blocks.mid-paragraph',
         'blocks.media-item',
         'blocks.gallery-media',
         'blocks.banner',
         'blocks.events-list',
-        'shared.partners-list',
         'blocks.paragraphes',
+        'blocks.membres',
+        'blocks.glossaires',
+        'blocks.partners-list',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -629,12 +799,6 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::page.page'>;
     pageHeading: Schema.Attribute.String &
-      Schema.Attribute.SetPluginOptions<{
-        i18n: {
-          localized: true;
-        };
-      }>;
-    pageIntro: Schema.Attribute.Blocks &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
           localized: true;
@@ -655,34 +819,33 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
   };
 }
 
-export interface ApiSiteSettingSiteSetting extends Struct.SingleTypeSchema {
-  collectionName: 'site_setting';
+export interface ApiPartnerPartner extends Struct.CollectionTypeSchema {
+  collectionName: 'partners';
   info: {
-    displayName: 'Site Settings';
-    pluralName: 'site-settings';
-    singularName: 'site-setting';
+    displayName: 'Partner';
+    pluralName: 'partners';
+    singularName: 'partner';
   };
   options: {
-    draftAndPublish: false;
+    draftAndPublish: true;
   };
   attributes: {
-    contact: Schema.Attribute.Component<'shared.contact', false>;
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
-      'api::site-setting.site-setting'
+      'api::partner.partner'
     > &
       Schema.Attribute.Private;
     logo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'>;
-    newsletterEmbed: Schema.Attribute.Text;
+    name: Schema.Attribute.String;
     publishedAt: Schema.Attribute.DateTime;
-    socials: Schema.Attribute.Component<'shared.social-link', true>;
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    url: Schema.Attribute.String;
   };
 }
 
@@ -840,6 +1003,7 @@ export interface PluginNavigationAudience extends Struct.CollectionTypeSchema {
     createdAt: Schema.Attribute.DateTime;
     createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    label: Schema.Attribute.String;
     locale: Schema.Attribute.String & Schema.Attribute.Private;
     localizations: Schema.Attribute.Relation<
       'oneToMany',
@@ -1348,8 +1512,11 @@ declare module '@strapi/strapi' {
       'api::event-category.event-category': ApiEventCategoryEventCategory;
       'api::event.event': ApiEventEvent;
       'api::global.global': ApiGlobalGlobal;
+      'api::glossaire.glossaire': ApiGlossaireGlossaire;
+      'api::homepage.homepage': ApiHomepageHomepage;
+      'api::membre.membre': ApiMembreMembre;
       'api::page.page': ApiPagePage;
-      'api::site-setting.site-setting': ApiSiteSettingSiteSetting;
+      'api::partner.partner': ApiPartnerPartner;
       'plugin::content-releases.release': PluginContentReleasesRelease;
       'plugin::content-releases.release-action': PluginContentReleasesReleaseAction;
       'plugin::i18n.locale': PluginI18NLocale;

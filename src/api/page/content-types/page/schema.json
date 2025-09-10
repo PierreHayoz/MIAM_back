@@ -36,14 +36,6 @@
         }
       }
     },
-    "pageIntro": {
-      "type": "blocks",
-      "pluginOptions": {
-        "i18n": {
-          "localized": true
-        }
-      }
-    },
     "blocks": {
       "type": "dynamiczone",
       "pluginOptions": {
@@ -52,14 +44,15 @@
         }
       },
       "components": [
-        "blocks.paragraph",
         "blocks.mid-paragraph",
         "blocks.media-item",
         "blocks.gallery-media",
         "blocks.banner",
         "blocks.events-list",
-        "shared.partners-list",
-        "blocks.paragraphes"
+        "blocks.paragraphes",
+        "blocks.membres",
+        "blocks.glossaires",
+        "blocks.partners-list"
       ]
     }
   }

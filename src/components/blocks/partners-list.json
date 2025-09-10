@@ -4,6 +4,15 @@
     "displayName": "partners-list"
   },
   "options": {},
-  "attributes": {},
+  "attributes": {
+    "paragraphe": {
+      "type": "blocks"
+    },
+    "partners": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::partner.partner"
+    }
+  },
   "config": {}
 }

@@ -157,6 +157,26 @@
           ]
         }
       }
+    },
+    "occurences": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.date-occurence",
+      "repeatable": true
+    },
+    "prices": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "shared.price_tier",
+      "repeatable": true
     }
   }
 }

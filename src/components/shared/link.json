@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_shared_links",
+  "info": {
+    "displayName": "link"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "isExternal": {
+      "type": "boolean",
+      "default": false
+    },
+    "url": {
+      "type": "string"
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    }
+  },
+  "config": {}
+}

@@ -8,10 +8,13 @@
     "name": {
       "type": "string"
     },
-    "role": {
+    "label": {
       "type": "string"
     },
-    "photo": {
+    "description": {
+      "type": "blocks"
+    },
+    "image": {
       "type": "media",
       "multiple": false,
       "allowedTypes": [

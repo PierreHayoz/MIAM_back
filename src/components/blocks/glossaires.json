@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_glossaires",
+  "info": {
+    "displayName": "glossaires"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "glossaires": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::glossaire.glossaire"
+    }
+  },
+  "config": {}
+}

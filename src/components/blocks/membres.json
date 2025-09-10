@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_membres",
+  "info": {
+    "displayName": "membres"
+  },
+  "options": {},
+  "attributes": {
+    "membres": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::membre.membre"
+    },
+    "title": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
