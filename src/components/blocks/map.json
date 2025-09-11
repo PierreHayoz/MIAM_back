@@ -1,0 +1,22 @@
+{
+  "collectionName": "components_blocks_maps",
+  "info": {
+    "displayName": "map"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "longitude": {
+      "type": "decimal"
+    },
+    "latitude": {
+      "type": "decimal"
+    },
+    "zoom": {
+      "type": "integer"
+    }
+  },
+  "config": {}
+}

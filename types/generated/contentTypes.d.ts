@@ -487,6 +487,12 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    doorOpening: Schema.Attribute.Time &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     endDate: Schema.Attribute.Date &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -523,6 +529,12 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
       }>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'>;
+    moreInfos: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
     occurences: Schema.Attribute.Component<'shared.date-occurence', true> &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -570,6 +582,12 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
     updatedAt: Schema.Attribute.DateTime;
     updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
       Schema.Attribute.Private;
+    warning: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
   };
 }
 
@@ -786,6 +804,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.membres',
         'blocks.glossaires',
         'blocks.partners-list',
+        'blocks.map',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{

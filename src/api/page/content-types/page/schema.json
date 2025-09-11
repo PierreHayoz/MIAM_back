@@ -52,7 +52,8 @@
         "blocks.paragraphes",
         "blocks.membres",
         "blocks.glossaires",
-        "blocks.partners-list"
+        "blocks.partners-list",
+        "blocks.map"
       ]
     }
   }

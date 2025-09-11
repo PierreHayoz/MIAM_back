@@ -85,6 +85,19 @@ export interface BlocksListItem extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksMap extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_maps';
+  info: {
+    displayName: 'map';
+  };
+  attributes: {
+    label: Schema.Attribute.String;
+    latitude: Schema.Attribute.Decimal;
+    longitude: Schema.Attribute.Decimal;
+    zoom: Schema.Attribute.Integer;
+  };
+}
+
 export interface BlocksMediaItem extends Struct.ComponentSchema {
   collectionName: 'components_blocks_media_items';
   info: {
@@ -319,6 +332,7 @@ declare module '@strapi/strapi' {
       'blocks.glossaires': BlocksGlossaires;
       'blocks.hover-list': BlocksHoverList;
       'blocks.list-item': BlocksListItem;
+      'blocks.map': BlocksMap;
       'blocks.media-item': BlocksMediaItem;
       'blocks.membres': BlocksMembres;
       'blocks.mid-paragraph': BlocksMidParagraph;
