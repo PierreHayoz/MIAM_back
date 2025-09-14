@@ -53,7 +53,8 @@
         "blocks.membres",
         "blocks.glossaires",
         "blocks.partners-list",
-        "blocks.map"
+        "blocks.map",
+        "blocks.button"
       ]
     }
   }

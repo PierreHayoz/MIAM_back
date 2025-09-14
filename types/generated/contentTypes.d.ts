@@ -812,6 +812,7 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.glossaires',
         'blocks.partners-list',
         'blocks.map',
+        'blocks.button',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{

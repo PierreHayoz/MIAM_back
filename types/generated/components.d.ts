@@ -11,6 +11,18 @@ export interface BlocksBanner extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksButton extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_buttons';
+  info: {
+    displayName: 'button';
+  };
+  attributes: {
+    externalURL: Schema.Attribute.String;
+    label: Schema.Attribute.String;
+    page: Schema.Attribute.Relation<'oneToOne', 'api::page.page'>;
+  };
+}
+
 export interface BlocksEventsList extends Struct.ComponentSchema {
   collectionName: 'components_blocks_events_lists';
   info: {
@@ -327,6 +339,7 @@ declare module '@strapi/strapi' {
   export module Public {
     export interface ComponentSchemas {
       'blocks.banner': BlocksBanner;
+      'blocks.button': BlocksButton;
       'blocks.events-list': BlocksEventsList;
       'blocks.gallery-media': BlocksGalleryMedia;
       'blocks.glossaires': BlocksGlossaires;

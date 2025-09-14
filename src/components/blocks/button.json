@@ -1,0 +1,21 @@
+{
+  "collectionName": "components_blocks_buttons",
+  "info": {
+    "displayName": "button"
+  },
+  "options": {},
+  "attributes": {
+    "label": {
+      "type": "string"
+    },
+    "page": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::page.page"
+    },
+    "externalURL": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
