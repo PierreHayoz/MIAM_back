@@ -527,6 +527,13 @@ export interface ApiEventEvent extends Struct.CollectionTypeSchema {
           localized: true;
         };
       }>;
+    isReservation: Schema.Attribute.Boolean &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }> &
+      Schema.Attribute.DefaultTo<false>;
     locale: Schema.Attribute.String;
     localizations: Schema.Attribute.Relation<'oneToMany', 'api::event.event'>;
     moreInfos: Schema.Attribute.String &
