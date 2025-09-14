@@ -1,5 +1,6 @@
 module.exports = () => ({
-     navigation: {
+  'duplicate-button': true,
+  navigation: {
     enabled: true,
     config: {
       // 👉 Autorise tes types internes linkables dans la nav :
