@@ -1,5 +1,4 @@
 module.exports = () => ({
-  'duplicate-button': true,
   navigation: {
     enabled: true,
     config: {
