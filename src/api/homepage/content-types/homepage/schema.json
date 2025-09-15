@@ -25,7 +25,8 @@
       "components": [
         "blocks.partners-list",
         "shared.section-cta",
-        "blocks.mid-paragraph"
+        "blocks.mid-paragraph",
+        "blocks.button"
       ]
     }
   }

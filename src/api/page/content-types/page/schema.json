@@ -54,7 +54,9 @@
         "blocks.glossaires",
         "blocks.partners-list",
         "blocks.map",
-        "blocks.button"
+        "blocks.button",
+        "blocks.nomade",
+        "blocks.commission"
       ]
     }
   }

@@ -410,6 +410,62 @@ export interface AdminUser extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiCommissionStrategiqueCommissionStrategique
+  extends Struct.CollectionTypeSchema {
+  collectionName: 'commission_strategiques';
+  info: {
+    displayName: 'Commission strat\u00E9gique';
+    pluralName: 'commission-strategiques';
+    singularName: 'commission-strategique';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::commission-strategique.commission-strategique'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    position: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    presentation: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiEventCategoryEventCategory
   extends Struct.CollectionTypeSchema {
   collectionName: 'event_categories';
@@ -710,7 +766,12 @@ export interface ApiHomepageHomepage extends Struct.SingleTypeSchema {
   };
   attributes: {
     blocks: Schema.Attribute.DynamicZone<
-      ['blocks.partners-list', 'shared.section-cta', 'blocks.mid-paragraph']
+      [
+        'blocks.partners-list',
+        'shared.section-cta',
+        'blocks.mid-paragraph',
+        'blocks.button',
+      ]
     > &
       Schema.Attribute.SetPluginOptions<{
         i18n: {
@@ -784,6 +845,61 @@ export interface ApiMembreMembre extends Struct.CollectionTypeSchema {
   };
 }
 
+export interface ApiMiamNomadeMiamNomade extends Struct.CollectionTypeSchema {
+  collectionName: 'miam_nomades';
+  info: {
+    displayName: 'Miam nomade';
+    pluralName: 'miam-nomades';
+    singularName: 'miam-nomade';
+  };
+  options: {
+    draftAndPublish: true;
+  };
+  pluginOptions: {
+    i18n: {
+      localized: true;
+    };
+  };
+  attributes: {
+    createdAt: Schema.Attribute.DateTime;
+    createdBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+    locale: Schema.Attribute.String;
+    localizations: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::miam-nomade.miam-nomade'
+    >;
+    name: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    photo: Schema.Attribute.Media<'images' | 'files' | 'videos' | 'audios'> &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    position: Schema.Attribute.String &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    presentation: Schema.Attribute.Blocks &
+      Schema.Attribute.SetPluginOptions<{
+        i18n: {
+          localized: true;
+        };
+      }>;
+    publishedAt: Schema.Attribute.DateTime;
+    updatedAt: Schema.Attribute.DateTime;
+    updatedBy: Schema.Attribute.Relation<'oneToOne', 'admin::user'> &
+      Schema.Attribute.Private;
+  };
+}
+
 export interface ApiPagePage extends Struct.CollectionTypeSchema {
   collectionName: 'pages';
   info: {
@@ -813,6 +929,8 @@ export interface ApiPagePage extends Struct.CollectionTypeSchema {
         'blocks.partners-list',
         'blocks.map',
         'blocks.button',
+        'blocks.nomade',
+        'blocks.commission',
       ]
     > &
       Schema.Attribute.SetPluginOptions<{
@@ -1536,12 +1654,14 @@ declare module '@strapi/strapi' {
       'admin::transfer-token': AdminTransferToken;
       'admin::transfer-token-permission': AdminTransferTokenPermission;
       'admin::user': AdminUser;
+      'api::commission-strategique.commission-strategique': ApiCommissionStrategiqueCommissionStrategique;
       'api::event-category.event-category': ApiEventCategoryEventCategory;
       'api::event.event': ApiEventEvent;
       'api::global.global': ApiGlobalGlobal;
       'api::glossaire.glossaire': ApiGlossaireGlossaire;
       'api::homepage.homepage': ApiHomepageHomepage;
       'api::membre.membre': ApiMembreMembre;
+      'api::miam-nomade.miam-nomade': ApiMiamNomadeMiamNomade;
       'api::page.page': ApiPagePage;
       'api::partner.partner': ApiPartnerPartner;
       'plugin::content-releases.release': PluginContentReleasesRelease;

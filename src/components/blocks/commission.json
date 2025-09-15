@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_commissions",
+  "info": {
+    "displayName": "commission"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "commission_strategiques": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::commission-strategique.commission-strategique"
+    }
+  },
+  "config": {}
+}

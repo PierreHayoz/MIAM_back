@@ -23,6 +23,20 @@ export interface BlocksButton extends Struct.ComponentSchema {
   };
 }
 
+export interface BlocksCommission extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_commissions';
+  info: {
+    displayName: 'commission';
+  };
+  attributes: {
+    commission_strategiques: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::commission-strategique.commission-strategique'
+    >;
+    title: Schema.Attribute.String;
+  };
+}
+
 export interface BlocksEventsList extends Struct.ComponentSchema {
   collectionName: 'components_blocks_events_lists';
   info: {
@@ -140,6 +154,20 @@ export interface BlocksMidParagraph extends Struct.ComponentSchema {
   };
   attributes: {
     text: Schema.Attribute.Text;
+  };
+}
+
+export interface BlocksNomade extends Struct.ComponentSchema {
+  collectionName: 'components_blocks_nomades';
+  info: {
+    displayName: 'nomade';
+  };
+  attributes: {
+    miam_nomades: Schema.Attribute.Relation<
+      'oneToMany',
+      'api::miam-nomade.miam-nomade'
+    >;
+    title: Schema.Attribute.String;
   };
 }
 
@@ -340,6 +368,7 @@ declare module '@strapi/strapi' {
     export interface ComponentSchemas {
       'blocks.banner': BlocksBanner;
       'blocks.button': BlocksButton;
+      'blocks.commission': BlocksCommission;
       'blocks.events-list': BlocksEventsList;
       'blocks.gallery-media': BlocksGalleryMedia;
       'blocks.glossaires': BlocksGlossaires;
@@ -349,6 +378,7 @@ declare module '@strapi/strapi' {
       'blocks.media-item': BlocksMediaItem;
       'blocks.membres': BlocksMembres;
       'blocks.mid-paragraph': BlocksMidParagraph;
+      'blocks.nomade': BlocksNomade;
       'blocks.paragraphes': BlocksParagraphes;
       'blocks.partners-list': BlocksPartnersList;
       'hover-style.ui': HoverStyleUi;

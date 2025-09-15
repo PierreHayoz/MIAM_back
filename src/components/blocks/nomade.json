@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_nomades",
+  "info": {
+    "displayName": "nomade"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "miam_nomades": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::miam-nomade.miam-nomade"
+    }
+  },
+  "config": {}
+}
